@@ -1,0 +1,175 @@
+@font-face {
+	font-family:futura;
+	src:url('fonts/FuturaLight.otf');
+	font-weight:100;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	background:#2D2B2C;
+}
+
+/* ------------------ WRAPPERS ------------------ */
+#wrapper {
+	width: 960px;
+	height: 600px;
+	background-image:url('../images/affluenza-bg.jpg');
+	background-color:#404040;
+	
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	margin:auto;
+}
+
+#header-wrapper {
+	width: 960px;
+	height:124px;
+	background-image:url('../images/trans-red.png');
+}
+
+#content-wrapper {
+	width:960px;
+	height:400px;
+}
+
+#footer-wrapper {
+	width:960px;
+	height:76px;
+	background-image:url('../images/trans-red.png');
+}
+
+/* ------------------ HEADER STYLES ------------------ */
+#title {
+	width:800px;
+	height:75px;
+	margin:auto;
+	
+    font-family:"futura";
+	font-size:20pt;
+	font-weight:500;
+	letter-spacing:.35em;
+	text-align:center;
+	line-height:25px;
+    color:#fff;
+}
+
+#navbar {
+	width:655px;
+	margin:auto;
+    text-align:justify;
+    
+    font-family:"futura";
+	font-size:17pt;
+	font-weight:100;
+    color:#fff;
+}
+#navbar * {
+	display:inline;
+}
+#navbar ul {
+	list-style:none;
+}
+
+#navbar span{
+	display:inline-block;
+	position:relative;
+	width:100%;
+	height:0;
+}
+
+#navbar a {
+	display:inline-block;
+	text-decoration: none;
+}
+
+#navbar p {
+	display:inline-block;
+	text-decoration:underline;
+}
+#navbar a:link {color:#fff;}
+#navbar a:visited {color:#fff;}
+#navbar a:hover {color:#fff; text-decoration:underline;}
+#navbar a:active {color:#fff; text-decoration:underline;}
+
+/* ------------------ CONTENT STYLES ------------------ */
+#arrow-left {
+	float:left;
+	padding-right:50px;
+	padding-top:125px;
+	width:130px;
+	text-align:right;
+}
+
+#arrow-right {
+	float:right;
+	padding-left:50px;
+	padding-top:125px;
+	width:130px;
+}
+
+#content-middle {	
+	padding-top:50px;
+	overflow-y:auto;
+	-webkit-overflow-scrolling: touch;
+	height:350px;
+	font-family:"futura";
+	color:#fff;
+}
+
+#content-middle a {
+	color:#fff;
+	text-decoration:none;
+}
+#content-middle a:link {color:#fff;}
+#content-middle a:visited {color:#fff;}
+#content-middle a:hover {color:#fff; text-decoration:underline;}
+#content-middle a:active {color:#fff; text-decoration:underline;}
+
+p#comingsoon {
+	width:100%;
+	font-size:34pt;
+	padding-top:80px;
+	text-align:center;
+}
+
+p#content-title {
+	width:100%;
+	font-size:35pt;
+}
+
+p.content {
+	width:100%;
+	font-size:15pt;
+	font-weight:100;
+}
+
+/* ------------------ FOOTER STYLES ------------------ */
+#page-bullets {
+	width:380px;
+	margin:auto;
+	padding:20px;
+	
+	text-align:justify;
+}
+
+#page-bullets * {
+	display:inline;
+}
+#page-bullets ul {
+	list-style:none;
+}
+
+#page-bullets span{
+	display:inline-block;
+	position:relative;
+	width:100%;
+	height:0;
+}
