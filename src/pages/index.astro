@@ -1,11 +1,70 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="Affluenza"
+  description="Art, photography, reflections, and personal discovery."
+>
+  <main class="site-container">
+    <section class="intro">
+      <p class="eyebrow">Affluenza.ca</p>
+
+      <h1>A greater awareness of ourselves.</h1>
+
+      <div class="reading-width">
+        <p>
+          Affluenza can be described as a highly contagious, socially transmitted sickness of abundant wealth, an unhealthy obsession with material goods, and the addiction for more. Some side effects include a false sense of accomplishment, emptiness, unnecessary debt, and an abundant amount of needless shit.
+        </p>
+
+        <p>
+          Over time, Affluenza has come to mean something different for me.
+        </p>
+
+        <p>
+          For me, Affluenza is the sickness of believing that more will make us whole, when what we truly need is a greater awareness of ourselves.
+        </p>
+
+        <p>
+          With that being said…
+        </p>
+
+        <p>
+          I’m done living a life in and of recovery. I’m ready to just live my life. Live my life as a friend, a brother, an uncle, a son, simply as me. Live my life as an explorer. Live my life as an artist. Simply live my life through discovery.
+        </p>
+
+        <p>
+          This website is where I will share my discoveries.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .intro {
+    display: grid;
+    align-content: center;
+    min-height: 100vh;
+    padding-block: 6rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 1.5rem;
+    color: var(--colour-accent);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 11ch;
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+  }
+
+  .reading-width {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  }
+</style>

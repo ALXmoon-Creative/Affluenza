@@ -1,0 +1,109 @@
+:root {
+  --colour-heading: #39393b;
+  --colour-body: #464648;
+  --colour-background: #fffef3;
+
+  /* Temporary until we settle on the exact deep red */
+  --colour-accent: #7a1f27;
+
+  --font-heading: "fraunces-variable", Georgia, serif;
+  --font-body: "source-serif-4", Georgia, serif;
+
+  --content-width: 72rem;
+  --reading-width: 42rem;
+  --page-padding: clamp(1.25rem, 4vw, 4rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--colour-background);
+  color: var(--colour-body);
+  font-family: var(--font-body);
+  font-size: 100%;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--colour-background);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--colour-heading);
+  font-family: var(--font-heading);
+  font-weight: 350;
+  line-height: 1.03;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--colour-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--colour-accent);
+}
+
+::selection {
+  background: var(--colour-accent);
+  color: var(--colour-background);
+}
+
+.site-container {
+  width: min(100% - (var(--page-padding) * 2), var(--content-width));
+  margin-inline: auto;
+}
+
+.reading-width {
+  max-width: var(--reading-width);
+}
