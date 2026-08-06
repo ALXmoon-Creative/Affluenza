@@ -1,0 +1,171 @@
+<header class="site-header">
+  <a href="/" class="site-title">Affluenza.ca</a>
+
+  <div class="explore-menu">
+    <button
+      class="explore-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="explore-navigation"
+    >
+      Explore
+    </button>
+
+    <nav
+      class="explore-nav"
+      id="explore-navigation"
+      aria-label="Explore"
+    >
+      <a href="/art">Art</a>
+      <a href="/photography">Photography</a>
+      <a href="/reflections">Reflections</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding-top: 2rem;
+  }
+
+  .site-title,
+  .explore-trigger {
+    color: var(--colour-accent);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .site-title {
+    text-decoration: none;
+  }
+
+  .explore-menu {
+    position: relative;
+    min-width: max-content;
+    text-align: right;
+  }
+
+  .explore-trigger {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+
+    color: var(--colour-accent);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-align: right;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    opacity: 1;
+    transition: opacity 800ms ease;
+  }
+
+  .explore-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    display: grid;
+    justify-items: end;
+    gap: 0.35rem;
+
+    min-width: max-content;
+    padding-top 0.9rem;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+
+    transition:
+      opacity 800ms ease,
+      transform 800ms ease,
+      visibility 0s linear 800ms;
+  }
+
+  .explore-nav a {
+    display: block;
+
+    color: var(--colour-accent);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .explore-nav a:hover,
+  .explore-nav a:focus-visible {
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.2em;
+  }
+
+  .explore-menu:hover .explore-nav,
+  .explore-menu:focus-within .explore-nav,
+  .explore-menu[data-open] .explore-nav {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    transition-delay: 250ms, 250ms, 0ms;
+  }
+  
+  .explore-menu:hover .explore-trigger,
+  .explore-menu:focus-within .explore-trigger,
+  .explore-menu[data-open] .explore-trigger {
+    opacity: 0.35;
+}
+</style>
+
+<script>
+  const menu = document.querySelector(".explore-menu");
+  const trigger = menu?.querySelector<HTMLButtonElement>(".explore-trigger");
+
+  if (menu && trigger) {
+    trigger.addEventListener("click", () => {
+      const isOpen = menu.hasAttribute("data-open");
+
+      menu.toggleAttribute("data-open", !isOpen);
+      trigger.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!(event.target instanceof Node) || menu.contains(event.target)) {
+        return;
+      }
+
+      menu.removeAttribute("data-open");
+      trigger.setAttribute("aria-expanded", "false");
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        menu.removeAttribute("data-open");
+        trigger.setAttribute("aria-expanded", "false");
+        trigger.focus();
+      }
+    });
+  }
+</script>
