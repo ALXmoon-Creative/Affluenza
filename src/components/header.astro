@@ -32,8 +32,11 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    width: 100%;
-    max-width: var(--content-width);
+    width: min(
+        calc(100% - (var(--page-padding) *2)),
+        var(--content-width)
+    );
+    
     margin-inline: auto;
     padding-top: 2rem;
   }
@@ -79,6 +82,7 @@
 
     opacity: 1;
     transition: opacity 800ms ease;
+    touch-action: manipulation;
   }
 
   .explore-nav {
@@ -121,9 +125,20 @@
     text-underline-offset: 0.2em;
   }
 
-  .explore-menu:hover .explore-nav,
-  .explore-menu:focus-within .explore-nav,
-  .explore-menu[data-open] .explore-nav {
+/* Click, tap, and keyboard behaviour on every device */
+.explore-menu:focus-within .explore-nav,
+.explore-menu[data-open] .explore-nav {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+
+  transition-delay: 250ms, 250ms, 0ms;
+}
+
+/* Hover behaviour only on devices with a real pointer */
+@media (hover: hover) and (pointer: fine) {
+  .explore-menu:hover .explore-nav {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -131,11 +146,17 @@
 
     transition-delay: 250ms, 250ms, 0ms;
   }
+}
   
-  .explore-menu:hover .explore-trigger,
-  .explore-menu:focus-within .explore-trigger,
-  .explore-menu[data-open] .explore-trigger {
+.explore-menu:focus-within .explore-trigger,
+.explore-menu[data-open] .explore-trigger {
+  opacity: 0.35;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .explore-menu:hover .explore-trigger {
     opacity: 0.35;
+  }
 }
 </style>
 
