@@ -17,11 +17,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
 
         <p>
-          Over time, Affluenza has come to mean something different for me.
+          In 2013, this was the topic of my final project in design school. Today, Affluenza has come to mean something different for me.
         </p>
 
         <p>
-          For me, Affluenza is the sickness of believing that more will make us whole, when what we truly need is a greater awareness of ourselves.
+          For me, Affluenza is the sickness of believing that more stuff will make us whole, when what we truly need is a greater awareness of ourselves.
         </p>
 
         <p>
@@ -42,11 +42,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2 id="explore-heading">Where would you like to Explore?</h2>
 
       <nav class="bottom-explore-nav" aria-label="Explore Affluenza">
-        <a href="/art" class="explore-entry">
-          <span class="explore-title">Art</span>
+        <a href="/visual_art" class="explore-entry">
+          <span class="explore-title">Visual Art</span>
           <span class="explore-leader" aria-hidden="true"></span>
           <span class="explore-description">
-            Visual explorations and personal projects.
+            Explorations and personal projects.
          </span>
         </a>
 
@@ -66,15 +66,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </span>
         </a>
 
-        <a href="/contact" class="explore-entry">
-          <span class="explore-title">Contact</span>
+        <a href="/inspirations" class="explore-entry">
+          <span class="explore-title">Inspirations</span>
           <span class="explore-leader" aria-hidden="true"></span>
           <span class="explore-description">
-            A place to get in touch.
+            Things that inspired my discoveries.
           </span>
         </a>
       </nav>
     </section>
+
+    <section class="dinkus-section" aria-hidden="true">
+      ⁂
+    </section>
+
   </main>
 </BaseLayout>
 
@@ -163,6 +168,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   font-family: var(--font-body);
   font-size: 1.1rem;
   line-height: 1.5;
+}
+
+.dinkus-section {
+  width: 100%;
+  margin-top: 0rem;
+  margin-bottom: 10rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--colour-accent);
 }
 
 @media (max-width: 40rem) {
