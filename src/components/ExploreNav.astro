@@ -1,0 +1,139 @@
+---
+const {
+  title = "Where would you like to explore next?"
+} = Astro.props;
+---
+
+<section class="bottom-explore" aria-labelledby="explore-heading">
+    <div class="site-container">
+
+    <h2 id="explore-heading">{title}</h2>
+
+      <nav class="bottom-explore-nav" aria-label="Explore Affluenza">
+        <a href="/visual-art" class="explore-entry">
+          <span class="explore-title">Visual Art</span>
+          <span class="explore-leader" aria-hidden="true"></span>
+          <span class="explore-description">
+            Explorations and personal projects.
+         </span>
+        </a>
+
+        <a href="/photography" class="explore-entry">
+          <span class="explore-title">Photography</span>
+          <span class="explore-leader" aria-hidden="true"></span>
+          <span class="explore-description">
+            Moments that made me stop and look.
+          </span>
+        </a>
+
+        <a href="/reflections" class="explore-entry">
+          <span class="explore-title">Reflections</span>
+          <span class="explore-leader" aria-hidden="true"></span>
+          <span class="explore-description">
+            Thoughts, poems, journal entries, and ideas.
+          </span>
+        </a>
+
+        <a href="/inspirations" class="explore-entry">
+          <span class="explore-title">Inspirations</span>
+          <span class="explore-leader" aria-hidden="true"></span>
+          <span class="explore-description">
+            Things that inspired my discoveries.
+          </span>
+        </a>
+      </nav>
+
+      </div>
+    </section>
+
+<style>
+.bottom-explore {
+  padding-block: 0rem 10rem;
+}
+
+.bottom-explore h2 {
+  margin-bottom: 4rem;
+
+  color: var(--colour-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 350;
+  line-height: 1.15;
+  max-width: 50rem;
+}
+
+.bottom-explore-nav {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.explore-entry {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  column-gap: 0.75rem;
+
+  text-decoration: none;
+}
+
+.explore-leader {
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-leader::before {
+  content: "................................................................................................................................................................................................";
+  color: var(--colour-body);
+  opacity: 0.15;
+  white-space: nowrap;
+  letter-spacing: 0.12em;
+}
+
+.explore-title {
+  color: var(--colour-accent);
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 350;
+  line-height: 1.1;
+}
+
+.explore-description {
+  max-width: 30rem;
+
+  color: var(--colour-body);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 40rem) {
+
+  .bottom-explore {
+    padding-block: 0 4rem;
+  }
+
+  .explore-entry {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .bottom-explore-nav {
+    gap: 2rem;
+  }
+
+  @media (max-width: 48rem) {
+
+  .bottom-explore h2 {
+    max-width: 17ch;
+  }
+  .explore-entry {
+    grid-template-columns: 1fr;
+    row-gap: 0.35rem;
+  }
+
+  .explore-leader {
+    display: none;
+  }
+}
+}
+</style>

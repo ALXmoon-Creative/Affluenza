@@ -1,0 +1,130 @@
+<footer class="site-footer">
+
+  <button
+    class="dinkus"
+    type="button"
+    aria-label="Scroll to top"
+  >
+  * * *
+</button>
+
+</footer>
+
+<style>
+  .site-footer {
+    width: 100%;
+    padding-bottom: 10rem;
+    border-bottom: 0.5rem solid var(--colour-accent);
+  }
+
+  .dinkus {
+    display: block;
+    margin-inline: auto;
+
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--colour-accent);
+
+    border: 0;
+    background: none;
+    corsor: pointer;
+  }
+
+  .dinkus:focus-visable {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+  
+</style>
+
+<script>
+  const dinkus = document.querySelector<HTMLButtonElement>(".dinkus");
+
+  dinkus?.addEventListener("click", () => {
+    const speed = 1600;
+    const easeDistance = 1200;
+
+    let previousTime = performance.now();
+    let easingStartTime: number | null = null;
+    let easingStartPosition = 0;
+    let cancelled = false;
+
+    function cancelScroll() {
+      cancelled = true;
+    }
+
+    window.addEventListener("wheel", cancelScroll, { once: true });
+    window.addEventListener("touchstart", cancelScroll, { once: true });
+    window.addEventListener("keydown", cancelScroll, { once: true });
+
+    function scroll(currentTime: number) {
+      if (cancelled) {
+        return;
+      }
+
+      const currentPosition = window.scrollY;
+
+      if (currentPosition <= 1) {
+        window.scrollTo({
+          top: 0,
+          behavior: "instant",
+        });
+
+        return;
+      }
+
+      if (currentPosition > easeDistance) {
+        const deltaTime = (currentTime - previousTime) / 1000;
+        previousTime = currentTime;
+
+        const distance = speed * deltaTime;
+
+        const nextPosition = Math.max(
+          currentPosition - distance,
+          easeDistance
+        );
+
+        window.scrollTo({
+          top: nextPosition,
+          behavior: "instant",
+        });
+
+        requestAnimationFrame(scroll);
+        return;
+      }
+
+      if (easingStartTime === null) {
+        easingStartTime = currentTime;
+        easingStartPosition = currentPosition;
+      }
+
+      const easeDuration =
+        (2 * easingStartPosition / speed) * 1000;
+
+      const elapsed = currentTime - easingStartTime;
+      const progress = Math.min(elapsed / easeDuration, 1);
+
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
+
+      const nextPosition =
+        easingStartPosition * (1 - easedProgress);
+
+      window.scrollTo({
+        top: nextPosition,
+        behavior: "instant",
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(scroll);
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: "instant",
+        });
+      }
+    }
+
+    requestAnimationFrame(scroll);
+  });
+</script>

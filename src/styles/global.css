@@ -83,6 +83,10 @@ p {
   margin-bottom: 1.25em;
 }
 
+.reading-width {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+}
+
 a {
   color: inherit;
   text-decoration-color: var(--colour-accent);
