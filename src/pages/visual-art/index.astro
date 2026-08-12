@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Visual Art — Affluenza"
+  description="Explorations and personal projects."
+>
+  <main class="site-container">
+
+    <section class="visual-art-index">
+
+      <header class="visual-art-header">
+        <h1>Visual Art</h1>
+      </header>
+
+      <div class="visual-art-list">
+
+        <article class="visual-art-entry">
+  <h2>
+    <a href="/visual-art/compassio/">Compassio</a>
+  </h2>
+
+  <p>A piece created in memory of LittleMan.</p>
+</article>
+
+      </div>
+
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .visual-art-index {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.visual-art-header {
+  margin-bottom: 5rem;
+}
+
+.visual-art-list {
+  display: grid;
+  gap: 4rem;
+}
+
+.visual-art-entry {
+  max-width: 40rem;
+}
+
+.visual-art-entry h2 {
+  margin-bottom: 0.5rem;
+}
+
+.visual-art-entry h2 a {
+  color: var(--colour-heading);
+  text-decoration: none;
+}
+
+.visual-art-entry h2 a:hover {
+  color: var(--colour-accent);
+}
+
+.visual-art-entry p {
+  margin: 0;
+}
+
+  @media (max-width: 48rem) {
+    .visual-art-index {
+      padding-top: 4rem;
+    }
+
+    .visual-art-header {
+      margin-bottom: 5rem;
+    }
+
+    .visual-art-entry {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .visual-art-image {
+      justify-self: center;
+    }
+
+    .visual-art-entry-text {
+      max-width: none;
+    }
+  }
+</style>

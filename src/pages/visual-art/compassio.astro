@@ -47,51 +47,28 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   <a
     class="artwork-image"
-    href="/images/visual-art/compassio/compassio-iphone15-wallpaper.jpg"
+    href="/images/visual-art/compassio/compassio-no-hidden-quote.jpg"
     aria-label="View the original Compassio artwork fullscreen"
   >
     <img
-      src="/images/visual-art/compassio/compassio-iphone15-wallpaper.jpg"
+      src="/images/visual-art/compassio/compassio-no-hidden-quote.jpg"
       alt="Compassio artwork created in memory of LittleMan"
     />
   </a>
     </section>
 
-    <section class="artwork-version artwork-version--reverse">
+    <section class="artwork-variations">
 
   <a
     class="artwork-image"
-    href="/images/visual-art/compassio/compassio-no-hidden-quote.jpg"
+    href="/images/visual-art/compassio/compassio-iphone15-wallpaper.jpg"
     aria-label="View this version of Compassio fullscreen"
   >
     <img
-      src="/images/visual-art/compassio/compassio-no-hidden-quote.jpg"
+      src="/images/visual-art/compassio/compassio-iphone15-wallpaper.jpg"
       alt="Compassio without the iPhone camera island treatment"
     />
   </a>
-
-  <div class="artwork-version-text">
-    <p>
-      During my exploration, I discovered that the piece can stand alone as
-      three separate versions.
-    </p>
-
-    <p>
-      This version removes the portion at the top that goes around the camera
-      island of the iPhone screen.
-    </p>
-  </div>
-
-</section>
-
-<section class="artwork-version">
-
-  <div class="artwork-version-text">
-    <p>
-      I think this one is the most personal for me. I understand all of it
-      without the additional graphics.
-    </p>
-  </div>
 
   <a
     class="artwork-image"
@@ -104,7 +81,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     />
   </a>
 
-    </section>
+  <div class="artwork-variations-text">
+    <p>
+      During my exploration, I discovered that the piece can stand alone as three separate versions. This version removes the portion at the top that goes around the camera island of the iPhone screen. I think this one is the most personal for me. I understand all of it without the additional graphics.
+    </p>
+  </div>
+
+</section>
   </article>
 
   <dialog class="lightbox" id="artwork-lightbox">
@@ -327,6 +310,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     height: 2.75rem;
     font-size: 1.1rem;
   }
+
+  .artwork-variations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.artwork-variations .artwork-image {
+  justify-self: stretch;
+}
+
+.artwork-variations .artwork-image img {
+  width: 100%;
+  height: auto;
+}
+
+.artwork-variations-text {
+  grid-column: 1 / -1;
+}
+
+.artwork-original .artwork-image {
+  grid-row: 1;
+}
+
+.artwork-original .artwork-version-text {
+  grid-row: 2;
+}
 }
 
 </style>
