@@ -1,0 +1,382 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Compassio — Affluenza"
+  description="A piece created in memory of LittleMan.">
+  <main class="site-container">
+
+  <article class="artwork">
+
+    <header class="artwork-header">
+      <p class="section-label">Visual Art</p>
+      <h1>Compassio</h1>
+    </header>
+
+    <section class="artwork-introduction">
+      <div class="reading-width">
+        <p>
+          This piece was created in memory of my boy, LittleMan. He and I had a
+          wonderful 17 years together, and he was always so loving—unconditional
+          love. Something that is very important to me is the compassion we shared.
+        </p>
+
+        <p>
+          In the beginning of my recovery, I learned about the origins of the word
+          “passion.” Passion derives from the Latin word <em>passio</em>, which means
+          “suffering,” “endurance,” or “bearing pain.” In Latin, the prefix
+          <em>com-</em> means “with” or “together.” This is where we get the word
+          “compassion.”
+        </p>
+
+        <p>
+          For me, compassion means <em>to endure together</em>. LittleMan and I
+          endured a lot together. He was my rock.
+        </p>
+      </div>
+    </section>
+
+    <section class="artwork-version artwork-original">
+        <div class="artwork-version-text">
+    <p>
+      I originally created this piece as a wallpaper to fit the screen of my
+      iPhone 15.
+    </p>
+  </div>
+
+  <a
+    class="artwork-image"
+    href="/images/visual-art/compassio/compassio-no-hidden-quote.jpg"
+    aria-label="View the original Compassio artwork fullscreen"
+  >
+    <img
+      src="/images/visual-art/compassio/compassio-no-hidden-quote.jpg"
+      alt="Compassio artwork created in memory of LittleMan"
+    />
+  </a>
+    </section>
+
+    <section class="artwork-variations">
+
+  <a
+    class="artwork-image"
+    href="/images/visual-art/compassio/compassio-iphone15-wallpaper.jpg"
+    aria-label="View this version of Compassio fullscreen"
+  >
+    <img
+      src="/images/visual-art/compassio/compassio-iphone15-wallpaper.jpg"
+      alt="Compassio without the iPhone camera island treatment"
+    />
+  </a>
+
+  <a
+    class="artwork-image"
+    href="/images/visual-art/compassio/compassio-littleman.jpg"
+    aria-label="View the final version of Compassio fullscreen"
+  >
+    <img
+      src="/images/visual-art/compassio/compassio-littleman.jpg"
+      alt="Compassio without the additional graphics"
+    />
+  </a>
+
+  <div class="artwork-variations-text">
+    <p>
+      During my exploration, I discovered that the piece can stand alone as three separate versions. This version removes the portion at the top that goes around the camera island of the iPhone screen. I think this one is the most personal for me. I understand all of it without the additional graphics.
+    </p>
+  </div>
+
+</section>
+  </article>
+
+  <dialog class="lightbox" id="artwork-lightbox">
+  <button
+    class="lightbox-close"
+    type="button"
+    aria-label="Close fullscreen image"
+  >
+    ×
+  </button>
+
+  <img
+    class="lightbox-image"
+    src=""
+    alt=""
+  />
+</dialog>
+
+</main>
+</BaseLayout>
+
+<style>
+  .artwork {
+  padding-top: 8rem;
+  padding-bottom: 0rem;
+}
+
+.artwork-header {
+  margin-bottom: 5rem;
+}
+
+.section-label {
+  margin-bottom: 1rem;
+  color: var(--colour-accent);
+  font-family: var(--font-heading);
+}
+
+.artwork-introduction {
+  margin-bottom: clamp(1.5rem, 10vh, 8rem);
+}
+
+.artwork-version {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-top:0;
+  margin-bottom: 10rem;
+}
+
+.artwork-version-text {
+  max-width: 24rem;
+  justify-self: end;
+  text-align: right;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  text-wrap: pretty;
+}
+
+.artwork-image {
+  display: block;
+  justify-self: start;
+}
+
+.artwork-image:focus {
+  outline: none;
+}
+
+.artwork-image:focus-visible {
+  outline: 3px solid var(--colour-accent);
+  outline-offset: 0.5rem;
+}
+
+.artwork-image img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: min(90vh, 60rem);
+  object-fit: contain;
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 0.5rem;
+}
+
+.artwork-version--reverse .artwork-image {
+  justify-self: end;
+}
+
+.artwork-version--reverse .artwork-version-text {
+  justify-self: start;
+  text-align: left;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+
+  margin: 0;
+  padding: 3rem;
+  border: 0;
+  background: rgba(57, 57, 59, 0.98);
+  box-sizing: border-box;
+}
+
+.lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.lightbox-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 6rem);
+  max-height: calc(100vh - 6rem);
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+
+  color: var(--colour-background);
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  opacity: 0.6;
+}
+
+.lightbox-close:focus {
+  outline: none;
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--colour-background);
+  outline-offset: 0.35rem;
+}
+
+@media (max-width: 48rem) {
+  .artwork {
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+  }
+
+  .artwork-header {
+    margin-bottom: 2.5rem;
+  }
+   
+  .artwork-introduction {
+    margin-bottom: 3.5rem;
+  }
+
+  .artwork-version {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .artwork-version:last-of-type {
+    margin-bottom: 8rem;
+  }
+
+  .artwork-version-text {
+    max-width: none;
+    justify-self: stretch;
+    text-align: left;
+  }
+
+  .artwork-image {
+    justify-self: center;
+  }
+
+  .artwork-image img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  .artwork-version--reverse .artwork-version-text {
+    grid-row: 1;
+    justify-self: stretch;
+    text-align: left;
+  }
+
+  .artwork-version--reverse .artwork-image {
+    grid-row: 2;
+    justify-self: center;
+  }
+
+    .lightbox {
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+
+  .lightbox-image {
+    max-width: calc(100vw - 3rem);
+    max-height: calc(100vh - 5rem);
+  }
+
+  .lightbox-close {
+    top: 0.75rem;
+    right: 1rem;
+
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.1rem;
+  }
+
+  .artwork-variations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.artwork-variations .artwork-image {
+  justify-self: stretch;
+}
+
+.artwork-variations .artwork-image img {
+  width: 100%;
+  height: auto;
+}
+
+.artwork-variations-text {
+  grid-column: 1 / -1;
+}
+
+.artwork-original .artwork-image {
+  grid-row: 1;
+}
+
+.artwork-original .artwork-version-text {
+  grid-row: 2;
+}
+}
+
+</style>
+
+<script>
+  const lightbox =
+    document.querySelector<HTMLDialogElement>("#artwork-lightbox");
+
+  const lightboxImage =
+    lightbox?.querySelector<HTMLImageElement>(".lightbox-image");
+
+  const closeButton =
+    lightbox?.querySelector<HTMLButtonElement>(".lightbox-close");
+
+  const artworkLinks =
+    document.querySelectorAll<HTMLAnchorElement>(".artwork-image");
+
+  artworkLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const image = link.querySelector<HTMLImageElement>("img");
+
+      if (!lightbox || !lightboxImage || !image) return;
+
+      lightboxImage.src = link.href;
+      lightboxImage.alt = image.alt;
+
+      lightbox.showModal();
+    });
+  });
+
+  closeButton?.addEventListener("click", () => {
+    lightbox?.close();
+  });
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      lightbox.close();
+    }
+  });
+</script>

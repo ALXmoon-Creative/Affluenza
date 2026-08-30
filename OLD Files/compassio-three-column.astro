@@ -13,7 +13,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </header>
 
       <section class="artwork-introduction">
-        <div class="reading-width artwork-introduction-text">
+        <div class="artwork-introduction-text">
           <p>
             This piece was created in memory of my boy, LittleMan. He and I had a
             wonderful 17 years together, and he was always so loving—unconditional
@@ -91,7 +91,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   .artwork-introduction-text {
     grid-column: 1 / span 2;
-    max-width: 44rem;
     text-wrap: pretty;
   }
 
@@ -103,7 +102,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     grid-column: 3;
     display: block;
     width: 100%;
-    margin-top: -13rem;
   }
 
   .artwork-image:focus {
@@ -126,10 +124,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   .lightbox {
     position: fixed;
     inset: 0;
+
     width: 100vw;
     max-width: none;
     height: 100vh;
     max-height: none;
+
     margin: 0;
     padding: 3rem;
     border: 0;
@@ -155,15 +155,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
+
     padding: 0;
     border: 0;
     background: transparent;
     appearance: none;
+
     color: var(--colour-background);
     font-family: inherit;
     font-size: 2rem;
     font-weight: 400;
     line-height: 1;
+
     cursor: pointer;
   }
 
@@ -200,10 +203,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       grid-column: 1;
     }
 
-    .artwork-introduction-text {
-      max-width: none;
-    }
-
     .artwork-image {
       justify-self: center;
     }
@@ -226,6 +225,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     .lightbox-close {
       top: 0.75rem;
       right: 1rem;
+
       width: 2.75rem;
       height: 2.75rem;
       font-size: 1.1rem;
