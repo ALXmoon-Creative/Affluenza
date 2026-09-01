@@ -3,8 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Compassio — Affluenza"
-  description="A piece created in memory of LittleMan.">
+  title="Little Worm's Nightmare — Affluenza"
+  description="A Vectorized Sketch.">
   <main class="site-container">
     <article class="artwork">
       <section class="artwork-columns">
@@ -12,7 +12,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       <header class="artwork-header">
         <p class="section-label">Visual Art</p>
-        <h1>Compassio</h1>
+        <h1>A Little Worm's Nightmare</h1>
       </header>
       
       <div class="artwork-introduction-text">
@@ -37,9 +37,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </div>
       </div>
 
-        <a class="artwork-image" href="/images/visual-art/compassio/compassio-no-hidden-quote.jpg" aria-label="View the original Compassio artwork fullscreen">
-          <img src="/images/visual-art/compassio/compassio-no-hidden-quote.jpg" alt="Compassio artwork created in memory of LittleMan"/>
+      <div class="artwork-images">
+        <a class="artwork-image" href="/images/visual-art/little_worms_nightmare/little_worms_nightmare.jpg" aria-label="View the original Compassio artwork fullscreen">
+          <img src="/images/visual-art/little_worms_nightmare/little_worms_nightmare.jpg" alt="Compassio artwork created in memory of LittleMan"/>
         </a>
+        <a class="artwork-image" href="/images/visual-art/little_worms_nightmare/little_worms_nightmar(sketch).jpg" aria-label="View the original Compassio artwork fullscreen">
+          <img src="/images/visual-art/little_worms_nightmare/little_worms_nightmar(sketch).jpg" alt="Compassio artwork created in memory of LittleMan"/>
+        </a>
+      </div>
       </section>
     </article>
 
@@ -79,6 +84,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     grid-column: 1 / span 2;
   }
 
+  .artwork-images {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
   .artwork-header {
     margin-bottom: 5rem;
   }
