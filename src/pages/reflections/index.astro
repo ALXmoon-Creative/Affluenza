@@ -8,33 +8,33 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 >
   <main class="site-container">
 
-    <section class="visual-art-index">
+    <section class="section-index">
 
-      <header class="visual-art-header">
+      <header class="section-header">
         <h1>Reflections</h1>
       </header>
 
-      <div class="visual-art-list">
+      <div class="section-list">
 
-        <article class="visual-art-entry">
+        <article class="section-entry">
           <h2>
-            <a href="/visual-art/compassio/">Reflections Title</a>
+            <a class="text-link" href="/reflections/hospital_bed/">Hospital Bed</a>
           </h2>
-            <p>Date Posted - August 30, 2026</p>
+            <p>Written - Summer 2025</p>
         </article>
 
-        <article class="visual-art-entry">
+        <article class="section-entry">
           <h2>
-            <a href="/visual-art/right_here-right_now/">Refelction Title</a>
+            <a class="text-link" href="/reflections/never_tomorrow/">Never Tomorrow</a>
           </h2>
-            <p>Date Posted - August 30, 2026.</p>
+            <p>Written - October 2024</p>
         </article>
 
-        <article class="visual-art-entry">
+        <article class="section-entry">
           <h2>
-            <a href="/visual-art/little_worms_nightmare/">Reflection Title</a>
+            <a class="text-link" href="/reflections/right-here-right-now/">Right Here, Right Now</a>
           </h2>
-            <p>Date Posted - August 30, 2026</p>
+            <p>Written - May 2024</p>
         </article>
 
       </div>
@@ -45,55 +45,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-  .visual-art-index {
-  padding-top: 8rem;
-}
-
-.visual-art-header {
-  margin-bottom: 5rem;
-}
-
-.visual-art-list {
-  display: grid;
-  gap: 4rem;
-}
-
-.visual-art-entry h2 {
-  margin-bottom: 0.5rem;
-}
-
-.visual-art-entry h2 a {
-  color: var(--colour-heading);
-  text-decoration: none;
-}
-
-.visual-art-entry h2 a:hover {
-  color: var(--colour-accent);
-}
-
-.visual-art-entry p {
-  margin: 0;
-}
-
   @media (max-width: 48rem) {
-    .visual-art-index {
+    .section-index {
       padding-top: 4rem;
     }
 
-    .visual-art-header {
+    .section-header {
       margin-bottom: 5rem;
     }
 
-    .visual-art-entry {
+    .section-entry {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
 
-    .visual-art-image {
+    .section-image {
       justify-self: center;
     }
 
-    .visual-art-entry-text {
+    .section-entry-text {
       max-width: none;
     }
   }

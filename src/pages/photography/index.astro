@@ -1,0 +1,85 @@
+
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PhotoRow from "../../components/PhotoRow.astro";
+
+
+const photoRows = [
+  // Row 1 — Two landscape photographs
+  [
+    {
+      src: "/images/photography/morning_powerlines.webp",
+      alt: "Sunrise behind power lines and a utility pole",
+      width: 2048,
+      height: 1536,
+    },
+    {
+      src: "/images/photography/morning_traintracks.webp",
+      alt: "Railway tracks extending toward the horizon",
+      width: 2048,
+      height: 1536,
+    },
+  ],
+
+  // Row 2 — Landscape and portrait
+  [
+    {
+      src: "/images/photography/blue_sky/blue_sky.webp",
+      alt: "Blue sky emerging through the clouds",
+      width: 2400,
+      height: 1800,
+    },
+    {
+      src: "/images/photography/radiotower_gathering.webp",
+      alt: "Birds gathered on a radio tower and its wires",
+      width: 1536,
+      height: 2048,
+    },
+  ],
+];
+
+---
+
+<BaseLayout
+  title="Photography — Affluenza"
+  description="Moments that made me stop and look."
+>
+  <main class="site-container">
+    <section class="photography">
+      <header class="photography-header">
+        <h1>Photography</h1>
+      </header>
+
+      <div class="photo-gallery">
+        {photoRows.map((row) => (
+          <PhotoRow photos={row} />
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .photography {
+    padding-top: 8rem;
+  }
+
+  .photography-header {
+    margin-bottom: 5rem;
+  }
+
+  .photo-gallery {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (max-width: 48rem) {
+    .photography {
+      padding-top: 4rem;
+    }
+
+    .photography-header {
+      margin-bottom: 3rem;
+    }
+  }
+</style>

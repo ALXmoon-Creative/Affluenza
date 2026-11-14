@@ -1,0 +1,261 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Right Here, Right Now — Affluenza"
+  description="Tracking My Time.">
+  <main class="site-container">
+    <article class="artwork">
+      <section class="artwork-columns">
+
+      <header class="artwork-header">
+        <p class="section-label">Reflections</p>
+        <h1>Right Here, Right Now</h1>
+      </header>
+      
+      <div class="artwork-introduction-text">
+          <p>
+            Don't be a clock watcher,<br />
+            And don't count down the days.<br />
+            For that is not wasn't important.
+          </p>
+          <p>
+            What is important is that we are here,<br />
+            Right here, right now.<br />
+          </p>
+
+          <p>
+            This was inspired by an elder, Frazer Smith. He would come to New Roads every Friday to facilitate "Talking Circle". One day he told us to stop being a clock watcher. Afterwards I was reflecting on it, and this is what came to me.
+          </p>
+          <p>
+            At the time this was in reference to counting my time in sobriety. I never liked the idea of tracking my sober days. For me, I don’t find it helpful. It’s not about the number of days I’ve been sober, it’s about how much I’ve changed and developed from that person stuck in a dark place. I don’t need a metric to track my change either. The only person that really needs to know how much I’ve changed is myself.
+          </p>
+      </div>
+      </section>
+    </article>
+
+    <dialog class="lightbox" id="artwork-lightbox">
+      <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close fullscreen image"
+      >
+        ×
+      </button>
+
+      <img
+        class="lightbox-image"
+        src=""
+        alt=""
+      />
+    </dialog>
+  </main>
+</BaseLayout>
+
+<style>
+  .artwork {
+    padding-top: 8rem;
+    padding-bottom: 0;
+  }
+
+  .artwork-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(2rem, 3vw, 4rem);
+    row-gap: 0;
+    align-items: start;
+  }
+
+
+
+  .artwork-header {
+    grid-column: 1 / span 2;
+    margin-bottom: 5rem;
+  }
+
+  .artwork-introduction-text {
+    grid-column: 1 / span 2;
+  }
+
+  .artwork-image {
+    grid-column: 2 / span 2;
+    align-self: center;
+  }
+
+  .section-label {
+    margin-bottom: 1rem;
+    color: var(--colour-accent);
+    font-family: var(--font-heading);
+  }
+
+  .artwork-introduction-text {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    text-wrap: pretty;
+  }
+
+  .artwork-introduction-text p:first-child {
+    margin-top: 0;
+  }
+
+  .artwork-image:focus {
+    outline: none;
+  }
+
+  .artwork-image:focus-visible {
+    outline: 2px solid var(--colour-accent);
+    outline-offset: 0.5rem;
+  }
+
+  .artwork-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    
+    
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    max-height: none;
+    margin: 0;
+    padding: 3rem;
+    border: 0;
+    background: rgba(57, 57, 59, 0.98);
+    box-sizing: border-box;
+  }
+
+  .lightbox[open] {
+    display: grid;
+    place-items: center;
+  }
+
+  .lightbox-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: calc(100vw - 6rem);
+    max-height: calc(100vh - 6rem);
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    color: var(--colour-background);
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .lightbox-close:hover {
+    opacity: 0.6;
+  }
+
+  .lightbox-close:focus {
+    outline: none;
+  }
+
+  .lightbox-close:focus-visible {
+    outline: 2px solid var(--colour-background);
+    outline-offset: 0.35rem;
+  }
+
+  @media (max-width: 48rem) {
+
+  .artwork {
+    padding-top: 4rem;
+  }
+
+  .artwork-columns {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .artwork-text,
+  .artwork-image {
+    grid-column: 1;
+  }
+
+  .artwork-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .artwork-image {
+    justify-self: center;
+  }
+
+  .artwork-image img {
+    width: auto;
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .lightbox {
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+
+  .lightbox-image {
+    max-width: calc(100vw - 3rem);
+    max-height: calc(100vh - 5rem);
+  }
+
+  .lightbox-close {
+    top: 0.75rem;
+    right: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.1rem;
+  }
+  }
+</style>
+
+<script>
+  const lightbox =
+    document.querySelector<HTMLDialogElement>("#artwork-lightbox");
+
+  const lightboxImage =
+    lightbox?.querySelector<HTMLImageElement>(".lightbox-image");
+
+  const closeButton =
+    lightbox?.querySelector<HTMLButtonElement>(".lightbox-close");
+
+  const artworkLinks =
+    document.querySelectorAll<HTMLAnchorElement>(".artwork-image");
+
+  artworkLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const image = link.querySelector<HTMLImageElement>("img");
+
+      if (!lightbox || !lightboxImage || !image) return;
+
+      lightboxImage.src = link.href;
+      lightboxImage.alt = image.alt;
+
+      lightbox.showModal();
+    });
+  });
+
+  closeButton?.addEventListener("click", () => {
+    lightbox?.close();
+  });
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      lightbox.close();
+    }
+  });
+</script>

@@ -1,0 +1,66 @@
+
+---
+interface Photo {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+interface Props {
+  photos: Photo[];
+  gap?: number;
+}
+
+const { photos, gap = 16 } = Astro.props;
+---
+
+<div
+  class="photo-row"
+  style={`--photo-gap: ${gap}px`}
+>
+  {photos.map((photo) => (
+    <div
+      class="photo-item"
+      style={`--ratio: ${photo.width / photo.height}`}
+    >
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        width={photo.width}
+        height={photo.height}
+        loading="lazy"
+      />
+    </div>
+  ))}
+</div>
+
+<style>
+  .photo-row {
+    display: flex;
+    gap: var(--photo-gap);
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .photo-item {
+    flex: var(--ratio) 1 0;
+    min-width: 0;
+  }
+
+  .photo-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 48rem) {
+    .photo-row {
+      flex-wrap: wrap;
+    }
+
+    .photo-item {
+      flex-basis: 100%;
+    }
+  }
+</style>

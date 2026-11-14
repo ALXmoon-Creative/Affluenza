@@ -56,7 +56,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
+  margin: 0;
   color: var(--colour-heading);
   font-family: var(--font-heading);
   font-weight: 350;
@@ -88,7 +88,7 @@ p {
 }
 
 a {
-  color: inherit;
+  color: var(--a);
   text-decoration-color: var(--colour-accent);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
@@ -114,4 +114,40 @@ a:hover {
 
 .reading-width {
   max-width: var(--reading-width);
+}
+
+.section-index {
+  padding-top: 8rem;
+}
+
+.section-header {
+  margin-bottom: 5rem;
+}
+
+.section-list {
+  display: grid;
+  gap: 4rem;
+}
+
+.section-entry h2 {
+  margin-bottom: 0.5rem;
+}
+
+.section-entry p {
+  margin: 0;
+}
+
+.text-link {
+  color: var(--colour-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.04em;
+  text-underline-offset: 0.1em;
+  text-decoration-color: transparent;
+
+  transition: text-decoration-color 300ms ease;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  text-decoration-color: currentColor;
 }
